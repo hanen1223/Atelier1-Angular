@@ -1,0 +1,22 @@
+<p>offres-emploi works!</p>
+<div class="row">
+<div class="col-md-4" *ngFor="let p of listeEmploi, let i =index" >
+    <div class="card" style="width: 18rem;">
+        <img src="https://th.bing.com/th/id/OIP.fvNhEAKN1nh95tqh1Vl_MQHaEK?pid=ImgDet&w=1280&h=720&rs=1">
+<div class="card-body">
+    <h5 class="card-title">Reference:{{p.reference}}</h5>
+      <h5 class="card-text">Titre: {{p.titre}}</h5>
+          <h5 class="card-text">Entreprise:{{p.entreprise}}</h5>
+              <h5 class="card-text">Etat: {{p.etat}}</h5>
+  
+    <button class="btn btn-primary" (click)="postuler(i)"  [disabled]="p.etat==false">Postuler</button>
+</div>
+</div>
+</div>
+</div>
+<button class="btn btn-primary"(click)="bilan()">Bilan</button>
+<h1>{{pip}}</h1>
+<form>
+    <input type="text" #i>
+    <button type="button" (click)="recherche(i.value)">Chercher</button>
+  </form>
