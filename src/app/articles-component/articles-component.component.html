@@ -1,0 +1,16 @@
+<p>articles-component works!</p>
+<h1>{{ title }}</h1>
+<br>
+<br>
+<input type="text" [(ngModel)]="numberOfArticles" disabled>
+<br>
+<br>
+<div *ngFor="let article of listeArticles">
+  <div *ngIf="article.categorie !== 'Travail'" class="article-frame"[ngStyle]="{'background-color': article.categorie === 'Education' ? 'blue' : 'transparent'}">
+    <h3>{{ article.contenu }}</h3>
+    <p>Auteur: {{ article.auteur }}</p>
+    <p>Date: {{ article.date }}</p>
+    <p>Catégorie: {{ article.categorie }}</p>
+  </div>
+</div>
+  
